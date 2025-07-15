@@ -1,7 +1,7 @@
 from load_excel import load_all_years
 import pandas as pd
-from config import OUTPUT_FILE_NAME
-from plot import plot_total_profile
+from config import OUTPUT_FILE_NAME, OUTPUT_DIR
+from plot import plot_bar_only, plot_line_only, plot_combined
 
 if __name__ =="__main__":
     print("loading excel files...")
@@ -19,7 +19,9 @@ if __name__ =="__main__":
 
     df_export.to_excel(OUTPUT_FILE_NAME, index=False)
 
-    plot_total_profile(total_profile)
+    plot_bar_only(total_profile, save_path=OUTPUT_DIR / "bar_graph")
+    plot_line_only(total_profile, save_path=OUTPUT_DIR / "line_graph")
+    plot_combined(total_profile, save_path=OUTPUT_DIR / "combined graph")
 
     
-    print(f"data saved to {OUTPUT_FILE_NAME}")
+    print(f"Plots and excel saved to: {OUTPUT_DIR}")
