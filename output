@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rücklieferung Report</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; }
+    h2 { margin-top: 2em; }
+    img { max-width: 100%; margin-bottom: 1em; border: 1px solid #ccc; }
+    .stats { background: #f5f5f5; padding: 1em; border-radius: 5px; }
+    .download-link { margin: 1em 0; display: block; }
+  </style>
+</head>
+<body>
+  <h1>Rücklieferung Analyse (2023 + 2024)</h1>
+
+  <div class="stats">
+    <h2>📊 Summary</h2>
+    <ul>
+      <li><strong>Total Energy:</strong> 514519.75 kWh</li>
+      <li><strong>Peak Time:</strong> 13:00</li>
+      <li><strong>Peak Output:</strong> 91113.0 Wh</li>
+      <li><strong>Average Production:</strong> 21438.32 Wh</li>
+    </ul>
+  </div>
+
+  <h2>📈 Visualizations</h2>
+  <h3>Raw Production (Wh)</h3>
+  <img src="plots/ruecklieferung_wh_combined.png">
+  <h3>Energy in kWh</h3>
+  <img src="plots/ruecklieferung_kwh_combined.png">
+  <h3>Percentual Profile (Wh)</h3>
+  <img src="plots/ruecklieferung_pct_highlighted.png">
+  <h3>Percentual Profile (kWh)</h3>
+  <img src="plots/ruecklieferung_pct_kwh_highlighted.png">
+
+  <h2>Downloads</h2>
+  <a class="download-link" href="excels/Ruecklieferung_kW.xlsx">Download kW Excel</a>
+  <a class="download-link" href="excels/Ruecklieferung_kWh.xlsx">Download kWh Excel</a>
+  <a class="download-link" href="excels/Ruecklieferung_pct_kWh.xlsx">Download % kWh Excel</a>
+
+  <footer><p style="font-size:0.8em;">Generated with Python 🐍 by Isak</p></footer>
+</body>
+</html>

@@ -1,9 +1,10 @@
 # plot.py
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 from pathlib import Path
 
 def _save_plot(x, y, kind="combined", title="", ylabel="Value", save_path=None):
-    plt.figure(figsize=(16, 6))
+    fig, ax = plt.subplots(figsize=(16, 6))
 
     if kind in ["bar", "combined"]:
         plt.bar(x, y, label="Bar", alpha=0.6)
@@ -16,9 +17,14 @@ def _save_plot(x, y, kind="combined", title="", ylabel="Value", save_path=None):
     plt.ylabel(ylabel)
     plt.xticks(rotation=90, fontsize=8)
     plt.grid(True, axis='y', linestyle='--', alpha=0.5)
+
+    ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"{int(x):,}".replace(",", "'")))
+
+    
     if kind == "combined":
-        plt.legend()
-    plt.tight_layout()
+        ax.legend()
+        
+    fig.tight_layout()
 
     if save_path:
         Path(save_path).parent.mkdir(parents=True, exist_ok=True)

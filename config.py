@@ -4,9 +4,8 @@ from pathlib import Path
 
 DATA_DIR = Path("data") / "input"
 OUTPUT_DIR = Path("data") / "output"
-
-
-OUTPUT_FILE_NAME = OUTPUT_DIR / "RueckspeiseAnalyse.xlsx" 
+OUTPUT_GRAPHS = OUTPUT_DIR / "Graphs"
+OUTPUT_EXCELS = OUTPUT_DIR / "Excels"
 
 FILES = {
     "2023": DATA_DIR / "2023_Lastgang_Ruecklieferung.xlsx",
